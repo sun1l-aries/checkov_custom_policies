@@ -6,7 +6,7 @@ metadata:
 definition:
   cond_type: "attribute"
   resource_types:
-    - "google_compute_instance"
+      - "google_compute_instance"
   attribute: "zone"
   operator: "not_equals"
   value: "us-central1-c"

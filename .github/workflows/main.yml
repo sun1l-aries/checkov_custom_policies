@@ -1,5 +1,5 @@
 ---
-# This is the soluble cli workflow with actions
+# This is the custom checks files where yamllint is run as a workflow
 on: [push]  # yamllint disable-line rule:truthy
 jobs:
   yamllint:
