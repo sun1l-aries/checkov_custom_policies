@@ -1,8 +1,8 @@
 ---
 metadata:
-  # yamllint enable
-  name: "AWS EC2 compute instances should either be nano or micro or small or medium or large"
   # yamllint disable
+  name: "AWS EC2 compute instances should either be nano or micro or small or medium or large"
+  # yamllint enable
   id: "CKV2_AWS_1002"
   category: "GENERAL SECURITY"
 definition:
