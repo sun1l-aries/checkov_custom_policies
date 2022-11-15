@@ -1,0 +1,37 @@
+---
+metadata:
+ name: "AWS EC2 compute instances should either be nano or micro or small or medium or large"
+ id: "CKV2_AWS_1002"
+ category: "GENERAL SECURITY"
+definition:
+ or:
+ - cond_type: "attribute"
+   resource_types:
+    - "aws_instance"
+   attribute: "instance_type"
+   operator: "contains"
+   value: ".micro"
+ - cond_type: "attribute"
+   resource_types:
+    - "aws_instance"
+   attribute: "instance_type"
+   operator: "contains"
+   value: ".nano"
+ - cond_type: "attribute"
+   resource_types:
+    - "aws_instance"
+   attribute: "instance_type"
+   operator: "contains"
+   value: ".small"
+-  cond_type: "attribute"
+   resource_types:
+    - "aws_instance"
+   attribute: "instance_type"
+   operator: "contains"
+   value: ".medium"
+-  cond_type: "attribute"
+   resource_types:
+    - "aws_instance"
+   attribute: "instance_type"
+   operator: "contains"
+   value: ".large"
