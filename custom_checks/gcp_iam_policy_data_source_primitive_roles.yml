@@ -1,8 +1,8 @@
 # ---
 # metadata:
-#   # yamllint disable
+    # yamllint disable
 #   name: "GCP IAM Policy Data Source must not have not use Basic Primitive roles (Owner, Editor and Viewer)"
-#   # yamllint enable
+    # yamllint enable
 #   id: "CKV2_GCP_1005"
 #   category: "IAM"
 # definition:
