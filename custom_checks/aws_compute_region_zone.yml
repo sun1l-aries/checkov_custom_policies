@@ -32,9 +32,3 @@ definition:
       attribute: "availability_zone"
       operator: "contains"
       value: "eu-central-2"
-
-
-
-    
-    
-    
