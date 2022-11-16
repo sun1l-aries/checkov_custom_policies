@@ -1,0 +1,126 @@
+---
+metadata:
+  # yamllint disable
+  name: "GCP IAM Roles should not use Basic Primitive roles (Owner, Editor and Viewer)
+        at Organisation, Folder, Project and Service"
+  # yamllint enable
+  id: "CKV2_GCP_1003"
+  category: "IAM"
+definition:
+  or:
+    # Project Binding
+    - cond_type: "attribute"
+      resource_types:
+        - "google_project_iam_binding"
+      attribute: "role"
+      operator: "not_equals"
+      value: "roles/owner"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_project_iam_binding"
+      attribute: "role"
+      operator: "not_equals"
+      value: "roles/editor"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_project_iam_binding"
+      attribute: "role"
+      operator: "not_equals"
+      value: "roles/viewer"
+    # Project Member Binding
+    - cond_type: "attribute"
+      resource_types:
+        - "google_project_iam_member"
+      attribute: "role"
+      operator: "not_equals"
+      value: "roles/owner"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_project_iam_member"
+      attribute: "role"
+      operator: "not_equals"
+      value: "roles/editor"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_project_iam_member"
+      attribute: "role"
+      operator: "not_equals"
+      value: "roles/viewer"
+    # Organisation Binding
+    - cond_type: "attribute"
+      resource_types:
+        - "google_organization_iam_binding"
+      attribute: "role"
+      operator: "not_equals"
+      value: "roles/owner"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_organization_iam_binding"
+      attribute: "role"
+      operator: "not_equals"
+      value: "roles/editor"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_organization_iam_binding"
+      attribute: "role"
+      operator: "not_equals"
+      value: "roles/viewer"
+    # Organisation Member Binding
+    - cond_type: "attribute"
+      resource_types:
+        - "google_organization_iam_member"
+      attribute: "role"
+      operator: "not_equals"
+      value: "roles/owner"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_organization_iam_member"
+      attribute: "role"
+      operator: "not_equals"
+      value: "roles/editor"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_organization_iam_member"
+      attribute: "role"
+      operator: "not_equals"
+      value: "roles/viewer"
+    # Folder Binding
+    - cond_type: "attribute"
+      resource_types:
+        - "google_folder_iam_binding"
+      attribute: "role"
+      operator: "not_equals"
+      value: "roles/owner"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_folder_iam_binding"
+      attribute: "role"
+      operator: "not_equals"
+      value: "roles/editor"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_folder_iam_binding"
+      attribute: "role"
+      operator: "not_equals"
+      value: "roles/viewer"
+    # folder Member Binding
+    - cond_type: "attribute"
+      resource_types:
+        - "google_folder_iam_member"
+      attribute: "role"
+      operator: "not_equals"
+      value: "roles/owner"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_folder_iam_member"
+      attribute: "role"
+      operator: "not_equals"
+      value: "roles/editor"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_folder_iam_member"
+      attribute: "role"
+      operator: "not_equals"
+      value: "roles/viewer"
+
+    
