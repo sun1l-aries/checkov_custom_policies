@@ -122,5 +122,3 @@ definition:
       attribute: "role"
       operator: "not_equals"
       value: "roles/viewer"
-
-    
