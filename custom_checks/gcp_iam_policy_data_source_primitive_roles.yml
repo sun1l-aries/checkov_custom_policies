@@ -1,36 +1,36 @@
----
-metadata:
-  # yamllint disable
-  name: "GCP IAM Policy Data Source must not have not use Basic Primitive roles (Owner, Editor and Viewer)"
-  # yamllint enable
-  id: "CKV2_GCP_1005"
-  category: "IAM"
-definition:
-  - and:
-      - cond_type: connection
-        resource_types:
-          - google_folder_iam_policy
-          - google_project_iam_policy
-          - google_organisation_iam_policy
-          - google_service_account_iam_policy
-        connected_resource_types:
-          - data.google_iam_policy
-        operator: exists
-      - cond_type: "attribute"
-        resource_types:
-          - "data.google_iam_policy.binding"
-        attribute: "role"
-        operator: "not_equals"
-        value: "roles/owner"
-      - cond_type: "attribute"
-        resource_types:
-          - "data.google_iam_policy.binding"
-        attribute: "role"
-        operator: "not_equals"
-        value: "roles/editor"
-      - cond_type: "attribute"
-        resource_types:
-          - "data.google_iam_policy.binding"
-        attribute: "role"
-        operator: "not_equals"
-        value: "roles/viewer"
+# ---
+# metadata:
+#   # yamllint disable
+#   name: "GCP IAM Policy Data Source must not have not use Basic Primitive roles (Owner, Editor and Viewer)"
+#   # yamllint enable
+#   id: "CKV2_GCP_1005"
+#   category: "IAM"
+# definition:
+#   - and:
+#       - cond_type: connection
+#         resource_types:
+#           - google_folder_iam_policy
+#           - google_project_iam_policy
+#           - google_organisation_iam_policy
+#           - google_service_account_iam_policy
+#         connected_resource_types:
+#           - data.google_iam_policy
+#         operator: exists
+#       - cond_type: "attribute"
+#         resource_types:
+#           - "data.google_iam_policy.binding"
+#         attribute: "role"
+#         operator: "not_equals"
+#         value: "roles/owner"
+#       - cond_type: "attribute"
+#         resource_types:
+#           - "data.google_iam_policy.binding"
+#         attribute: "role"
+#         operator: "not_equals"
+#         value: "roles/editor"
+#       - cond_type: "attribute"
+#         resource_types:
+#           - "data.google_iam_policy.binding"
+#         attribute: "role"
+#         operator: "not_equals"
+#         value: "roles/viewer"
