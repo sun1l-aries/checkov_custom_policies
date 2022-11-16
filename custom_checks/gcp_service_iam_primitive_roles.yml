@@ -6,7 +6,7 @@ metadata:
   id: "CKV2_GCP_1004"
   category: "IAM"
 definition:
-  or:
+  and:
     # Service Account Binding
     - cond_type: "attribute"
       resource_types:

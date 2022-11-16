@@ -7,7 +7,7 @@ metadata:
   id: "CKV2_GCP_1003"
   category: "IAM"
 definition:
-  or:
+  and:
     # Project Binding
     - cond_type: "attribute"
       resource_types:
