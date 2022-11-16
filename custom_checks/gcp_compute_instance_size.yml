@@ -1,0 +1,82 @@
+---
+metadata:
+  # yamllint disable
+  name: "GCP compute instances should either 
+        micro, small, medium or standard,highcpu or highmem with 4 vcpus max"
+  # yamllint enable
+  id: "CKV2_GCP_1002"
+  category: "GENERAL SECURITY"
+definition:
+  or:
+    - cond_type: "attribute"
+      resource_types:
+        - "google_compute_instance"
+      attribute: "machine_type"
+      operator: "contains"
+      value: "micro"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_compute_instance"
+      attribute: "machine_type"
+      operator: "contains"
+      value: "small"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_compute_instance"
+      attribute: "machine_type"
+      operator: "contains"
+      value: "medium"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_compute_instance"
+      attribute: "machine_type"
+      operator: "contains"
+      value: "standard-1"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_compute_instance"
+      attribute: "machine_type"
+      operator: "contains"
+      value: "standard-2"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_compute_instance"
+      attribute: "machine_type"
+      operator: "contains"
+      value: "standard-4"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_compute_instance"
+      attribute: "machine_type"
+      operator: "contains"
+      value: "highcpu-1"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_compute_instance"
+      attribute: "machine_type"
+      operator: "contains"
+      value: "highcpu-2"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_compute_instance"
+      attribute: "machine_type"
+      operator: "contains"
+      value: "highcpu-4"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_compute_instance"
+      attribute: "machine_type"
+      operator: "contains"
+      value: "highmem-1"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_compute_instance"
+      attribute: "machine_type"
+      operator: "contains"
+      value: "highmem-2"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_compute_instance"
+      attribute: "machine_type"
+      operator: "contains"
+      value: "highmem-4"

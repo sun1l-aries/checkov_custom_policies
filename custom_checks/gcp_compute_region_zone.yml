@@ -1,0 +1,40 @@
+---
+metadata:
+  # yamllint disable
+  name: "GCP compute instances regions should be in either 
+        europe-west-1 (BE) europe-west2-a (GB), europe-west3-a (DE),europe-west4-a (NL) or europe-west6-a (CH)"
+  # yamllint enable
+  id: "CKV2_GCP_1001"
+  category: "GENERAL SECURITY"
+definition:
+  or:
+    - cond_type: "attribute"
+      resource_types:
+        - "google_compute_instance"
+      attribute: "zone"
+      operator: "contains"
+      value: "europe-west1"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_compute_instance"
+      attribute: "zone"
+      operator: "contains"
+      value: "europe-west2"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_compute_instance"
+      attribute: "zone"
+      operator: "contains"
+      value: "europe-west3"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_compute_instance"
+      attribute: "zone"
+      operator: "contains"
+      value: "europe-west4"
+    - cond_type: "attribute"
+      resource_types:
+        - "google_compute_instance"
+      attribute: "zone"
+      operator: "contains"
+      value: "europe-west6"

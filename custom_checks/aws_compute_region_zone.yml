@@ -1,0 +1,40 @@
+---
+metadata:
+  # yamllint disable
+  name: "AWS EC2 compute instances regions should be in either 
+        eu-central-1 (DE), eu-west-1 (IE), eu-west-2 (GB), eu-central-1 (CH)   "
+  # yamllint enable
+  id: "CKV2_AWS_1003"
+  category: "GENERAL SECURITY"
+definition:
+  or:
+    - cond_type: "attribute"
+      resource_types:
+        - "aws_instance"
+      attribute: "availability_zone"
+      operator: "contains"
+      value: "eu-central-1"
+    - cond_type: "attribute"
+      resource_types:
+        - "aws_instance"
+      attribute: "availability_zone"
+      operator: "contains"
+      value: "eu-west-1"
+    - cond_type: "attribute"
+      resource_types:
+        - "aws_instance"
+      attribute: "availability_zone"
+      operator: "contains"
+      value: "eu-west-2"
+    - cond_type: "attribute"
+      resource_types:
+        - "aws_instance"
+      attribute: "availability_zone"
+      operator: "contains"
+      value: "eu-central-2"
+
+
+
+    
+    
+    

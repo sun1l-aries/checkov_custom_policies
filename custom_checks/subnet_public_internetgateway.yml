@@ -3,7 +3,7 @@ metadata:
   name: "Class 1 accounts MUST not have public subnets
     and hence connections to the Internet.
     Please remove public subnets and make them private subnets"
-  id: "CKV2_AWS_1077"
+  id: "CKV2_AWS_1001"
   category: "NETWORKING"
 definition:
   or:
