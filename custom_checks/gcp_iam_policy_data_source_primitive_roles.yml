@@ -18,19 +18,19 @@ definition:
       #   operator: exists
       - cond_type: "attribute"
         resource_types:
-          - "data.google_iam_policy.binding"
-        attribute: "role"
+          - "data.google_iam_policy"
+        attribute: "binding.role"
         operator: "not_equals"
         value: "roles/owner"
       - cond_type: "attribute"
         resource_types:
-          - "data.google_iam_policy.binding"
-        attribute: "role"
+          - "data.google_iam_policy"
+        attribute: "binding.role"
         operator: "not_equals"
         value: "roles/editor"
       - cond_type: "attribute"
         resource_types:
-          - "data.google_iam_policy.binding"
-        attribute: "role"
+          - "data.google_iam_policy"
+        attribute: "binding.role"
         operator: "not_equals"
         value: "roles/viewer"
